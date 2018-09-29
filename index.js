@@ -30,7 +30,7 @@ app.get("/login", (req, res) => {
 			return 0.5 - Math.random();
 		});
 		const portString = process.env.PORT ? null : `:${port}`;
-		imgArr.push(`${req.hostname}${portString}/${images[0]}`);
+		imgArr.push(`http://${req.hostname}${portString}/${images[0]}`);
 	}
 	res.json(imgArr);
 });
