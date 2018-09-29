@@ -17,8 +17,8 @@ app.post("/login", (req, res) => {
 		images.sort(function() {
 			return 0.5 - Math.random();
 		});
-		const portString = process.env.PORT ? null : `:${port}`;
-		imgArr.push(`${req.hostname}${portString}/${images[0]}`);
+		const portString = process.env.PORT ? "" : `:${port}`;
+		imgArr.push(`https://${req.hostname}${portString}/${images[0]}`);
 	}
 	res.json(imgArr);
 });
@@ -29,8 +29,8 @@ app.get("/login", (req, res) => {
 		images.sort(function() {
 			return 0.5 - Math.random();
 		});
-		const portString = process.env.PORT ? null : `:${port}`;
-		imgArr.push(`${req.hostname}${portString}/${images[0]}`);
+		const portString = process.env.PORT ? "" : `:${port}`;
+		imgArr.push(`https://${req.hostname}${portString}/${images[0]}`);
 	}
 	res.json(imgArr);
 });
