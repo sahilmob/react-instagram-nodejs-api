@@ -4,7 +4,7 @@ var path = require("path");
 
 const app = express();
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "img")));
+app.use(express.static("img"));
 
 const port = process.env.PORT || 3000;
 
@@ -18,7 +18,7 @@ app.post("/login", (req, res) => {
 			return 0.5 - Math.random();
 		});
 		const portString = process.env.PORT ? null : `:${port}`;
-		imgArr.push(`${req.hostname}${portString}/${images[0]}`);
+		imgArr.push(`http://${req.hostname}${portString}/${images[0]}`);
 	}
 	res.json(imgArr);
 });
