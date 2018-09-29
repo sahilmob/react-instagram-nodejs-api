@@ -1,9 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+var path = require("path");
 
 const app = express();
 app.use(bodyParser.json());
-app.use(express.static("img"));
+app.use(express.static(path.join(__dirname, "img")));
 
 const port = process.env.PORT || 3000;
 
