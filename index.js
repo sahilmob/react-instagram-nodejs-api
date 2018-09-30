@@ -57,7 +57,7 @@ app.post("/login", (req, res) => {
 		}
 		res.status(200).json(imgArr);
 	} else {
-		res.status(401).json({
+		res.json({
 			message: "Username and/or password are invalid"
 		});
 	}
