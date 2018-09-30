@@ -1,14 +1,21 @@
 const express = require("express");
+const cors = require('cors')
 const bodyParser = require("body-parser");
-var path = require("path");
+const fs = require("fs");
 
 const app = express();
+app.use(cors)
 app.use(bodyParser.json());
 app.use(express.static("img"));
 
 const port = process.env.PORT || 3000;
 
-const images = ["1.jgp", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"];
+fs.readdir("./img", (err, filesDir) => {
+	let files = [];
+	filesDir.forEach(file => {
+		files.push(file);
+	});
+});
 
 app.post("/login", (req, res) => {
 	const imgArr = [];
