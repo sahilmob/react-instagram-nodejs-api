@@ -53,7 +53,7 @@ app.post("/login", (req, res) => {
 	res.json(imgArr);
 });
 
-app.get("/login", (req, res) => {
+app.get("/images", (req, res) => {
 	const imgArr = [];
 	for (let i = 0; i < 12; i++) {
 		images.sort(function() {
